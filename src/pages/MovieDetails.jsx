@@ -25,6 +25,7 @@ const MovieDetails = () => {
 
   // Calculate rounded popularity percentage
   const roundedPopularity = Math.round(movieDetails.vote_average * 10);
+  const releaseYear = movieDetails.release_date.split('-')[0];
 
   return (
     <div>
@@ -37,7 +38,7 @@ const MovieDetails = () => {
         alt={movieDetails.title}
       />
       <div>
-        <h1>{movieDetails.title}</h1>
+        <h1>{`${movieDetails.title} (${releaseYear})`}</h1>
         <h4>User score: {roundedPopularity}%</h4>
         <h2>Overview</h2>
         <p>{movieDetails.overview}</p>
