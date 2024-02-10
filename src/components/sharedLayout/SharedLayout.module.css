@@ -1,0 +1,26 @@
+
+.navbar {
+    padding: 20px;
+    font-weight: bold;
+  }
+  
+  .navLink {
+    margin-right: 20px;
+    color: black;
+    text-decoration: none; 
+  }
+
+  .navLink:hover {
+    color: red; 
+  }
+
+  .navLink:active {
+    color: red; 
+  }
+  
+  .shadowLine {
+    height: 5px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
