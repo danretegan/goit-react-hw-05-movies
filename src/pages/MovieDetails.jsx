@@ -1,5 +1,59 @@
-function MovieDetails() {
-  return <div>MovieDetails...</div>;
-}
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { fetchMovieDetails } from '../services/api';
+
+const MovieDetails = () => {
+  const { movieId } = useParams();
+  const [movieDetails, setMovieDetails] = useState(null);
+
+  useEffect(() => {
+    const fetchDetails = async () => {
+      try {
+        const details = await fetchMovieDetails(movieId);
+        setMovieDetails(details);
+      } catch (error) {
+        console.error('Error fetching movie details:', error);
+      }
+    };
+
+    fetchDetails();
+  }, [movieId]);
+
+  if (!movieDetails) {
+    return <p>Loading...</p>;
+  }
+
+  // Calculate rounded popularity percentage
+  const roundedPopularity = Math.round(movieDetails.vote_average * 10);
+
+  return (
+    <div>
+      <h1>{movieDetails.title}</h1>
+      <h4>User score: {roundedPopularity}%</h4>
+      <h2>Overview</h2>
+      <p>{movieDetails.overview}</p>
+      <h2>Genres</h2>
+      <p>
+        {movieDetails.genres.map(genre => (
+          <span key={genre.id}> {genre.name}</span>
+        ))}
+      </p>
+
+      <img
+        src={
+          movieDetails.poster_path
+            ? `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`
+            : `https://i.imgur.com/p3MsT9t.jpg`
+        }
+        alt={movieDetails.title}
+      />
+      <hr />
+      <h3>Additional information</h3>
+      <Link to={`/movies/${movieId}/cast`}>Cast</Link>
+      <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
+      <hr />
+    </div>
+  );
+};
 
 export default MovieDetails;
