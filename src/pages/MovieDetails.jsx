@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { Link, Outlet, useNavigate, useParams } from 'react-router-dom';
 import { fetchMovieDetails } from '../services/api';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -29,6 +30,7 @@ const MovieDetails = () => {
 
   return (
     <div>
+      <button onClick={() => navigate('/')}>&#129104; Go back</button>
       <img
         src={
           movieDetails.poster_path
