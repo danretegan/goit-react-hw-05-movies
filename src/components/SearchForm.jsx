@@ -14,6 +14,7 @@ export const SearchForm = ({ value, onChange }) => {
         onChange={e => onChange(e.target.value)}
         placeholder="Search movies..."
       />
+      <button type="submit">Search</button>
     </form>
   );
 };
