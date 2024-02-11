@@ -5,8 +5,8 @@ import styles from './SharedLayout.module.css';
 const SharedLayout = () => {
   const location = useLocation();
 
-  const isMoviesPage = location.pathname === '/movies';
   const isHomePage = location.pathname === '/';
+  const isMoviesPage = location.pathname.startsWith('/movies');  
 
   return (
     <>
