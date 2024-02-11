@@ -1,8 +1,18 @@
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-export const SearchForm = ({ value, onChange }) => {
+export const SearchForm = ({ value, onChange, onSubmit }) => {
+  const [inputValue, setInputValue] = useState(value);
+
+  const handleChange = e => {
+    setInputValue(e.target.value);
+  };
+
   const handleSubmit = e => {
     e.preventDefault();
+    if (onSubmit) {
+      onSubmit(inputValue);
+    }
   };
 
   return (
@@ -10,8 +20,8 @@ export const SearchForm = ({ value, onChange }) => {
       <h2>Movie Search</h2>
       <input
         type="text"
-        value={value}
-        onChange={e => onChange(e.target.value)}
+        value={inputValue}
+        onChange={handleChange}
         placeholder="Search movies..."
       />
       <button type="submit">Search</button>
@@ -22,4 +32,5 @@ export const SearchForm = ({ value, onChange }) => {
 SearchForm.propTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
 };

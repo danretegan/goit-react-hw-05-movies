@@ -11,28 +11,38 @@ const Movies = () => {
   const [loading, setLoading] = useState(false);
 
   const updateQueryString = query => {
-    const nextParams = query !== '' && { query };
-    setSearchParams(nextParams);
+    setSearchParams({ query });
   };
 
+  const handleSearchSubmit = async query => {
+    try {
+      setLoading(true);
+      const movies = await handleSearch(query);
+      setSearchResults(movies);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Efectul va fi declanșat doar când se schimbă `movieName`
   useEffect(() => {
-    const search = async () => {
-      try {
-        setLoading(true);
-        const movies = await handleSearch(movieName);
-        setSearchResults(movies);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    search();
+    if (movieName !== '') {
+      handleSearchSubmit(movieName);
+    } else {
+      // Dacă câmpul de căutare este gol, poți gestiona această situație
+      setSearchResults([]);
+    }
   }, [movieName]);
 
   return (
     <div>
-      <SearchForm value={movieName} onChange={updateQueryString} />
+      <SearchForm
+        value={movieName}
+        onChange={updateQueryString}
+        onSubmit={handleSearchSubmit}
+      />
       {loading ? (
         <h2>Loading...</h2>
       ) : searchResults.length === 0 && movieName ? (
