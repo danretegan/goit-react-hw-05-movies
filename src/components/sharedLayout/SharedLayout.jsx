@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import styles from './SharedLayout.module.css';
 
@@ -6,7 +6,7 @@ const SharedLayout = () => {
   const location = useLocation();
 
   const isHomePage = location.pathname === '/';
-  const isMoviesPage = location.pathname.startsWith('/movies');  
+  const isMoviesPage = location.pathname.startsWith('/movies');
 
   return (
     <>
@@ -27,7 +27,9 @@ const SharedLayout = () => {
         </Link>
       </nav>
       <div className={styles.shadowLine} />
-      <Outlet />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
