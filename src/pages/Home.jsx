@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import MovieList from '../components/MovieList/MovieList';
 import { fetchTrendingMovies } from '../services/api';
+import Loader from '../components/Loader';
 
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -27,7 +28,7 @@ const Home = () => {
   return (
     <div>
       <h2>Trending today:</h2>
-      {loading ? <div>Loading...</div> : <MovieList films={trendingMovies} />}
+      {loading ? <Loader /> : <MovieList films={trendingMovies} />}
       {/* Utilizarea MovieList pentru afișarea listei de filme */}
     </div>
   );
