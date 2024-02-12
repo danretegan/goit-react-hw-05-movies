@@ -10,20 +10,27 @@ const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const movieName = searchParams.get('query') || '';
   const [loading, setLoading] = useState(false);
+  const [noResults, setNoResults] = useState(false);
 
   const updateQueryString = query => {
     setSearchParams({ query });
   };
 
-  const handleSearchSubmit = async query => {
+  const performSearch = async query => {
     try {
       setLoading(true);
 
-      // Introduce o întârziere de 3 secunde
+      // Introduce o întârziere de 1 secunda:
       await new Promise(resolve => setTimeout(resolve, 1000));
 
       const movies = await handleSearch(query);
       setSearchResults(movies);
+
+      if (movies.length === 0) {
+        setNoResults(true);
+      } else {
+        setNoResults(false);
+      }
     } catch (error) {
       console.error(error);
     } finally {
@@ -33,13 +40,22 @@ const Movies = () => {
 
   // Efectul va fi declanșat doar când se schimbă `movieName`
   useEffect(() => {
-    if (movieName !== '') {
-      handleSearchSubmit(movieName);
-    } else {
-      // Dacă câmpul de căutare este gol, poți gestiona această situație
-      setSearchResults([]);
-    }
+    const performSearchEffect = async () => {
+      if (movieName !== '') {
+        performSearch(movieName);
+      } else {
+        // Dacă câmpul de căutare este gol, putem decide cum să gestionăm situația.
+        setSearchResults([]);
+        setNoResults(false);
+      }
+    };
+
+    performSearchEffect();
   }, [movieName]);
+
+  const handleSearchSubmit = async query => {
+    performSearch(query);
+  };
 
   return (
     <div>
@@ -50,8 +66,8 @@ const Movies = () => {
       />
       {loading ? (
         <Loader />
-      ) : searchResults.length === 0 && movieName ? (
-        <h2>No movie with this name. Try something else.</h2>
+      ) : noResults ? (
+        <h3>No movie with this name. Try something else.</h3>
       ) : (
         <MovieList films={searchResults} />
       )}

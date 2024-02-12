@@ -31,6 +31,6 @@ export const SearchForm = ({ value, onSubmit }) => {
 
 SearchForm.propTypes = {
   value: PropTypes.string,
-  onChange: PropTypes.func,
+  handleChange: PropTypes.func,
   onSubmit: PropTypes.func,
 };
