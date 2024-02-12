@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-export const SearchForm = ({ value, onChange, onSubmit }) => {
+export const SearchForm = ({ value, onSubmit }) => {
   const [inputValue, setInputValue] = useState(value);
 
   const handleChange = e => {
