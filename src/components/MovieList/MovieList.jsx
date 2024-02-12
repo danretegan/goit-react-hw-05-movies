@@ -10,6 +10,7 @@ const MovieList = ({ films }) => {
     <ol className={styles.movieList}>
       {films.map(movie => (
         <li key={movie.id} className={styles.movieListItem}>
+          🎞️ {''}
           <Link
             to={`/movies/${movie.id}`}
             state={{ from: location }}
