@@ -7,22 +7,28 @@ import Loader from '../../components/Loader';
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchDetails = async () => {
       try {
         const details = await fetchMovieDetails(movieId);
-        setMovieDetails(details);
+        // Așteaptă 1 secundă înainte de a actualiza starea cu detaliile filmului
+        setTimeout(() => {
+          setMovieDetails(details);
+          setLoading(false);
+        }, 1000);
       } catch (error) {
         console.error('Error fetching movie details:', error);
+        setLoading(false);
       }
     };
 
     fetchDetails();
   }, [movieId]);
 
-  if (!movieDetails) {
+  if (loading) {
     return <Loader />;
   }
 

@@ -4,14 +4,20 @@ import { fetchTrendingMovies } from '../services/api';
 
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
         const movies = await fetchTrendingMovies();
-        setTrendingMovies(movies);
+        // Așteaptă 1 secundă înainte de a actualiza starea cu filmele
+        setTimeout(() => {
+          setTrendingMovies(movies);
+          setLoading(false);
+        }, 1000);
       } catch (error) {
         console.error('Error fetching trending movies:', error);
+        setLoading(false);
       }
     };
 
@@ -21,8 +27,8 @@ const Home = () => {
   return (
     <div>
       <h2>Trending today:</h2>
+      {loading ? <div>Loading...</div> : <MovieList films={trendingMovies} />}
       {/* Utilizarea MovieList pentru afișarea listei de filme */}
-      <MovieList films={trendingMovies} />
     </div>
   );
 };

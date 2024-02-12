@@ -18,6 +18,10 @@ const Movies = () => {
   const handleSearchSubmit = async query => {
     try {
       setLoading(true);
+
+      // Introduce o întârziere de 3 secunde
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
       const movies = await handleSearch(query);
       setSearchResults(movies);
     } catch (error) {

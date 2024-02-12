@@ -16,7 +16,10 @@ const Cast = () => {
       } catch (error) {
         console.error(error);
       } finally {
-        setLoading(false); // Setează loading pe false indiferent de rezultat
+        // Simulăm o întârziere de 1 secundă înainte de a marca încărcarea ca fiind completă
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
       }
     };
 
