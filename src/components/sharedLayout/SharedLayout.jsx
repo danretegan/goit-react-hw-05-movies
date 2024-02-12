@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import styles from './SharedLayout.module.css';
-import Loader from '../Loader';
 
 const SharedLayout = () => {
   const location = useLocation();
