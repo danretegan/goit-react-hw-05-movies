@@ -28,7 +28,7 @@ const SharedLayout = () => {
         </Link>
       </nav>
       <div className={styles.shadowLine} />
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
     </>
