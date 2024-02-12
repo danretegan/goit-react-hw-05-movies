@@ -50,6 +50,7 @@ const Movies = () => {
       ) : (
         <MovieList films={searchResults} />
       )}
+      {/* Utilizarea MovieList pentru afișarea listei de filme */}
     </div>
   );
 };
