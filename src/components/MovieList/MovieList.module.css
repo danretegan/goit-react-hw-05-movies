@@ -1,11 +1,15 @@
 .movieList {
-  
-    list-style-type: none;
-    padding: 0;
-
+    padding-left: 20px;
   }
   
   .movieListItem {
     margin-bottom: 5px; 
   }
   
+  .linkStyle {
+    text-decoration: none;
+  }
+
+  .linkStyle:hover {
+    color: red;
+  }

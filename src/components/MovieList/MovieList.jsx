@@ -7,20 +7,20 @@ const MovieList = ({ films }) => {
   const location = useLocation();
 
   return (
-    <ul className={styles.movieList}>
+    <ol className={styles.movieList}>
       {films.map(movie => (
         <li key={movie.id} className={styles.movieListItem}>
-          🎞️{' '}
           <Link
             to={`/movies/${movie.id}`}
             state={{ from: location }}
             cover={movie.poster_path}
+            className={styles.linkStyle}
           >
             {movie.title}
           </Link>
         </li>
       ))}
-    </ul>
+    </ol>
   );
 };
 
