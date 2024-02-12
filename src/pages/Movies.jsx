@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { handleSearch } from '../services/api';
 import { SearchForm } from '../components/SearchForm';
 import MovieList from '../components/MovieList';
+import Loader from '../components/Loader';
 
 const Movies = () => {
   const [searchResults, setSearchResults] = useState([]);
@@ -44,7 +45,7 @@ const Movies = () => {
         onSubmit={handleSearchSubmit}
       />
       {loading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : searchResults.length === 0 && movieName ? (
         <h2>No movie with this name</h2>
       ) : (

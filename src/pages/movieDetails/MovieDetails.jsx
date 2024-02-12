@@ -2,6 +2,7 @@ import React, { Suspense, useEffect, useState } from 'react';
 import { Link, Outlet, useNavigate, useParams } from 'react-router-dom';
 import { fetchMovieDetails } from '../../services/api';
 import styles from './MovieDetails.module.css';
+import Loader from '../../components/Loader';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -22,7 +23,7 @@ const MovieDetails = () => {
   }, [movieId]);
 
   if (!movieDetails) {
-    return <p>Loading...</p>;
+    return <Loader />;
   }
 
   const roundedPopularity = Math.round(movieDetails.vote_average * 10);
@@ -71,7 +72,7 @@ const MovieDetails = () => {
         </Link>
       </nav>
       <hr />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
     </div>
