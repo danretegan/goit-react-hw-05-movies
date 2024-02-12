@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { handleSearch } from '../services/api';
 import { SearchForm } from '../components/SearchForm';
-import MovieList from '../components/MovieList';
+import MovieList from '../components/MovieList/MovieList';
 import Loader from '../components/Loader';
 
 const Movies = () => {
@@ -47,7 +47,7 @@ const Movies = () => {
       {loading ? (
         <Loader />
       ) : searchResults.length === 0 && movieName ? (
-        <h2>No movie with this name</h2>
+        <h2>No movie with this name. Try something else.</h2>
       ) : (
         <MovieList films={searchResults} />
       )}

@@ -17,7 +17,7 @@ export const SearchForm = ({ value, onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Movie Search</h2>
+      <h2>Movie Search:</h2>
       <input
         type="text"
         value={inputValue}

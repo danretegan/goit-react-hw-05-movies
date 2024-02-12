@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import MovieList from '../components/MovieList';
+import MovieList from '../components/MovieList/MovieList';
 import { fetchTrendingMovies } from '../services/api';
 
 const Home = () => {
@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <div>
-      <h2>Trending today</h2>
+      <h2>Trending today:</h2>
       {/* Utilizarea MovieList pentru afișarea listei de filme */}
       <MovieList films={trendingMovies} />
     </div>

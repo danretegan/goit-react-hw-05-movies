@@ -1,0 +1,11 @@
+.movieList {
+  
+    list-style-type: none;
+    padding: 0;
+
+  }
+  
+  .movieListItem {
+    margin-bottom: 5px; 
+  }
+  
