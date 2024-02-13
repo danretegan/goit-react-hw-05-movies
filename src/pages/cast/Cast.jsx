@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchMovieCast } from '../services/api';
-import Loader from '../components/Loader';
+import { fetchMovieCast } from '../../services/api';
+import Loader from '../../components/Loader';
+import styles from './Cast.module.css';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -29,17 +30,16 @@ const Cast = () => {
   return (
     <>
       {loading ? (
-        <Loader /> // Afișează Loader cât timp se încarcă datele
+        <Loader />
       ) : (
         <>
+          <h2>Movie Cast:</h2>
           {cast.length !== 0 && (
-            <div>
-              <h2>Movie Cast</h2>
+            <div className={styles.castContainer}>
               {cast.map(actor => (
-                <div key={actor.id}>
+                <div key={actor.id} className={styles.actorContainer}>
                   <img
-                    width="200px"
-                    height="300px"
+                    className={styles.actorImage}
                     src={
                       actor.profile_path
                         ? `https://image.tmdb.org/t/p/w300${actor.profile_path}`
@@ -47,7 +47,10 @@ const Cast = () => {
                     }
                     alt={actor.original_name}
                   />
-                  <p>{actor.name}</p>
+                  <div className={styles.actorTextContainer}>
+                    <p>{actor.name}</p>
+                    <p>Character: {actor.character}</p>
+                  </div>
                 </div>
               ))}
             </div>

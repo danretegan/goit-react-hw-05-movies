@@ -1,0 +1,23 @@
+.castContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.actorContainer {
+  margin: 10px;
+  text-align: center;
+}
+
+.actorImage {
+  width: 200px;
+  height: auto;
+  margin: 0 auto; 
+  display: block; 
+}
+
+.actorTextContainer {
+  text-align: center;
+  white-space: normal;
+  max-width: 200px; 
+}
