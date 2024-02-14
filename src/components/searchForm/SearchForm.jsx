@@ -17,7 +17,7 @@ export const SearchForm = ({ value, onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
+    <form onSubmit={handleSubmit}>
       <h2 className={styles.heading}>Movie Search:</h2>
       <input
         type="text"
