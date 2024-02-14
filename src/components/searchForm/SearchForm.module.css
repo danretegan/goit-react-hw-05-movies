@@ -1,0 +1,27 @@
+.form {
+    margin: 20px;
+  }
+  
+  .heading {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .input {
+    padding: 8px;
+    margin-right: 8px;
+  }
+  
+  .button {
+    background-color: #007bff;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }

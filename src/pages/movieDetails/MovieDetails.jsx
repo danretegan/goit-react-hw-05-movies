@@ -58,7 +58,7 @@ const MovieDetails = () => {
           >{`${movieDetails.title} (${releaseYear})`}</h1>
           <h4 className={styles.userScore}>User score: {roundedPopularity}%</h4>
           <h2>Overview</h2>
-          <p className={styles.movieOverview}>{movieDetails.overview}</p>
+          <p>{movieDetails.overview}</p>
           <h2>Genres</h2>
           <p className={styles.genres}>
             {movieDetails.genres.map(genre => (
