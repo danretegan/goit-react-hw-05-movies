@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/520.adfa2871.chunk.js","mappings":"0JAIA,UAJA,WACE,OAAOA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,qBACd,C","sources":["pages/NotFoundPage.jsx"],"sourcesContent":["function NotFoundPage() {\n  return <div>Not Found Page...</div>;\n}\n\nexport default NotFoundPage;\n"],"names":["_jsx","children"],"sourceRoot":""}
