@@ -34,4 +34,6 @@ const SharedLayout = () => {
   );
 };
 
+// Dacă folosim tehnica «shared layout», atunci Suspense trebuie plasat direct în componenta SharedLayout. În caz contrar, la fiecare încărcare a paginii, componentele comune a paginilor, cum ar fi header și navigation, vor dispărea și vor fi randate din nou.
+
 export default SharedLayout;

@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, Outlet, useNavigate, useParams } from 'react-router-dom';
 import { fetchMovieDetails } from '../../services/api';
 import styles from './MovieDetails.module.css';
@@ -78,9 +78,7 @@ const MovieDetails = () => {
         </Link>
       </nav>
       <hr />
-      <Suspense fallback={<div>Loading...</div>}>
-        <Outlet />
-      </Suspense>
+      <Outlet />
     </div>
   );
 };
