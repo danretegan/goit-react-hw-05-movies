@@ -1,3 +1,9 @@
+.container {
+  margin: 0 auto; 
+  max-width: 1200px; 
+  padding: 1rem;
+}
+
 .navbar {
   font-weight: bold;
   padding-bottom: 1rem;

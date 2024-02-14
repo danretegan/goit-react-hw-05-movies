@@ -9,7 +9,7 @@ const SharedLayout = () => {
   const isMoviesPage = location.pathname.startsWith('/movies');
 
   return (
-    <>
+    <div className={styles.container}>
       <nav className={styles.navbar}>
         <Link
           to="/"
@@ -30,7 +30,7 @@ const SharedLayout = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
-    </>
+    </div>
   );
 };
 
