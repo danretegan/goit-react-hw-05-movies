@@ -5,6 +5,7 @@ import { SearchForm } from '../components/searchForm/SearchForm';
 import MovieList from '../components/movieList/MovieList';
 import Loader from '../components/Loader';
 
+
 const Movies = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();

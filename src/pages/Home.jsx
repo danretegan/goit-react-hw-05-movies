@@ -3,6 +3,7 @@ import MovieList from '../components/movieList/MovieList';
 import { fetchTrendingMovies } from '../services/api';
 import Loader from '../components/Loader';
 
+
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [loading, setLoading] = useState(true);
