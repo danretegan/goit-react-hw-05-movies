@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import styles from './SharedLayout.module.css';
+import ScrollButton from 'components/scrollButton/ScrollButton';
 
 const SharedLayout = () => {
   const location = useLocation();
@@ -30,6 +31,7 @@ const SharedLayout = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
+      <ScrollButton />
     </div>
   );
 };
