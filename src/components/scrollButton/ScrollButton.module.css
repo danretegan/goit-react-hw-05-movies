@@ -21,3 +21,11 @@
 .ScrollButton:active {
   transform: scale(0.95);
 }
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
