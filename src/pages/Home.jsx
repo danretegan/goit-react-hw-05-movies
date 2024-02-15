@@ -15,7 +15,7 @@ const Home = () => {
         setTimeout(() => {
           setTrendingMovies(movies);
           setLoading(false);
-        }, 1000);
+        }, 750);
       } catch (error) {
         console.error('Error fetching trending movies:', error);
         setLoading(false);

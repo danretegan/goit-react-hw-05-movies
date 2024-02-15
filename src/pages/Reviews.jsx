@@ -19,7 +19,7 @@ const Reviews = () => {
         // Simulăm o întârziere de 1 secundă înainte de a marca încărcarea ca fiind completă
         setTimeout(() => {
           setLoading(false);
-        }, 1000);
+        }, 750);
       }
     };
 

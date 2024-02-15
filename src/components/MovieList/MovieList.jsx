@@ -7,7 +7,7 @@ const MovieList = ({ films }) => {
   const location = useLocation();
 
   return (
-    <ol className={styles.movieList}>
+    <ul className={styles.movieList}>
       {films.map(movie => (
         <li key={movie.id} className={styles.movieListItem}>
           🎬 {''}
@@ -21,7 +21,7 @@ const MovieList = ({ films }) => {
           </Link>
         </li>
       ))}
-    </ol>
+    </ul>
   );
 };
 

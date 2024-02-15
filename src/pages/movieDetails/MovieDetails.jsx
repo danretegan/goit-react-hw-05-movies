@@ -18,7 +18,7 @@ const MovieDetails = () => {
         setTimeout(() => {
           setMovieDetails(details);
           setLoading(false);
-        }, 1000);
+        }, 750);
       } catch (error) {
         console.error('Error fetching movie details:', error);
         setLoading(false);

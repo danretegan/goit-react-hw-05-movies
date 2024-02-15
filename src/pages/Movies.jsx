@@ -21,7 +21,7 @@ const Movies = () => {
       setLoading(true);
 
       // Introduce o întârziere de 1 secunda:
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 750));
 
       const movies = await handleSearch(query);
       setSearchResults(movies);
