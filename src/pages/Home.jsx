@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import MovieList from '../components/test/MovieList';
+import MovieList from '../components/movieList/MovieList';
 import { fetchTrendingMovies } from '../services/api';
 import Loader from '../components/Loader';
 
