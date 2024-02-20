@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { Link, Outlet, useNavigate, useParams } from 'react-router-dom';
 import { fetchMovieDetails } from '../../services/api';
 import styles from './MovieDetails.module.css';
@@ -70,15 +70,17 @@ const MovieDetails = () => {
       <hr />
       <h3 className={styles.additionalInfo}>Additional information</h3>
       <nav className={styles.navLinks}>
-        <Link to={`cast`} className={styles.navLink}>
+        <Link to="cast" className={styles.navLink}>
           Cast
         </Link>
-        <Link to={`reviews`} className={styles.navLink}>
+        <Link to="reviews" className={styles.navLink}>
           Reviews
         </Link>
       </nav>
       <hr />
-      <Outlet />
+      <Suspense fallback={<div>Loading additional information...</div>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
