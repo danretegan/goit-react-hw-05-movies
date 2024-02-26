@@ -3,12 +3,13 @@ Creează un routing de bază pentru o aplicație de căutare și stocare a filme
 ## API themoviedb.org
 Pentru backend, utilizează [Links with title](https://www.themoviedb.org "themoviedb.org API"). Trebuie să te înregistrezi și să obții o cheie pentru API. În această sarcină, vei utiliza următoarele endpoint-uri.
 
-- [Links with title](https://developer.themoviedb.org/reference/trending-all "/trending/get-trending") - lista cu cele mai populare filme de astăzi, pentru a crea o colecție pe pagina principală.
-- [Links with title](https://developer.themoviedb.org/reference/search-movie "/search/search-movies") - căutarea unui film după cuvinte cheie pe pagina de filme.
-- [Links with title](https://developer.themoviedb.org/reference/movie-details "/movies/get-movie-details") - solicitarea informațiilor complete despre un film pentru pagina filmului.
-- [Links with title](https://developer.themoviedb.org/reference/movie-credits "/movies/get-movie-credits") - solicitarea informațiilor despre distribuția de actori pentru pagina filmului.
-- [Links with title](https://developer.themoviedb.org/reference/movie-reviews "/movies/get-movie-reviews") - solicitarea recenziilor pentru pagina filmului.
-[Links with title](https://developer.themoviedb.org/docs/getting-started "Link către documentație") 
+- [/trending/get-trending](https://developer.themoviedb.org/reference/trending-all) - lista cu cele mai populare filme de astăzi, pentru a crea o colecție pe pagina principală.
+- [/search/search-movies](https://developer.themoviedb.org/reference/search-movie) - căutarea unui film după cuvinte cheie pe pagina de filme.
+- [/movies/get-movie-details](https://developer.themoviedb.org/reference/movie-details) - solicitarea informațiilor complete despre un film pentru pagina filmului.
+- [/movies/get-movie-credits](https://developer.themoviedb.org/reference/movie-credits) - solicitarea informațiilor despre distribuția de actori pentru pagina filmului.
+- [/movies/get-movie-reviews](https://developer.themoviedb.org/reference/movie-reviews) - solicitarea recenziilor pentru pagina filmului.
+
+- [Link către documentație](https://developer.themoviedb.org/docs/getting-started) 
 
 ## Routes
 Aplicația trebuie să aibă următoarele rute. Dacă utilizatorul accesează o rută inexistentă, acesta ar trebui să fie redirecționat către pagina de principală.
