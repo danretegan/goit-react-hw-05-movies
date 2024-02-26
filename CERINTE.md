@@ -13,11 +13,11 @@ Pentru backend, utilizează [Links with title](https://www.themoviedb.org "themo
 ## Routes
 Aplicația trebuie să aibă următoarele rute. Dacă utilizatorul accesează o rută inexistentă, acesta ar trebui să fie redirecționat către pagina de principală.
 
-`'/'` - componenta `Home`, pagina principală cu lista de filme populare.
-`'/movies'` - componenta `Movies`, pagina de căutare a unui film după cuvântul cheie.
-`'/movies/:movieId'` - componenta `MovieDetails`, pagina cu informații detaliate despre film.
-``/movies/:movieId/cast` - componenta `Cast`, informații despre distribuția de actori. Afișată pe pagina `MovieDetails`.
-`/movies/:movieId/reviews` - componenta `Reviews`, informații despre recenzii. Afișată pe pagina `MovieDetails`.
+- `'/'` - componenta `Home`, pagina principală cu lista de filme populare.
+- `'/movies'` - componenta `Movies`, pagina de căutare a unui film după cuvântul cheie.
+- `'/movies/:movieId'` - componenta `MovieDetails`, pagina cu informații detaliate despre film.
+- `/movies/:movieId/cast` - componenta `Cast`, informații despre distribuția de actori. Afișată pe pagina `MovieDetails`.
+- `/movies/:movieId/reviews` - componenta `Reviews`, informații despre recenzii. Afișată pe pagina `MovieDetails`.
 
 ## Code Splitting (separarea codului)
 Adaugă încărcarea asincronă a codului JS pentru rutele aplicației folosind `React.lazy()` și `<Suspense>`.
